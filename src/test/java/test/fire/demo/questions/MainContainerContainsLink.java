@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Presence;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.targets.Target;
+import net.thucydides.core.annotations.Step;
 import test.fire.demo.ui.MainContainer;
 
 public class MainContainerContainsLink implements Question<Boolean>{
@@ -16,6 +17,7 @@ public class MainContainerContainsLink implements Question<Boolean>{
     }
 
     @Override
+    @Step("contains link #linkText")
     public Boolean answeredBy(Actor actor) {
         return Presence.of(MainContainer.getHyperlinkLocator(linkText)).viewedBy(actor).asBoolean();
     }

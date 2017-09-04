@@ -11,6 +11,6 @@ public class Header {
 
     public static Target getHeaderMenu(String type){
         String xpath = String.format(HEADER_MENU,type.toUpperCase());
-        return Target.the("Header Menu").located(By.xpath(xpath));
+        return Target.the(type +"Header Menu").located(By.xpath(xpath));
     }
 }

@@ -2,6 +2,7 @@ package test.fire.demo.ui;
 
 
 import net.serenitybdd.screenplay.targets.Target;
+import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.By;
 
 import java.text.MessageFormat;

@@ -5,28 +5,27 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.By;
 import test.fire.demo.ui.Header;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class Go implements Task {
+public class WanaGo implements Task {
 
     private final String type;
 
-    @Step("Go to #Type Banking")
+    @Step("WanaGo to #type Banking")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(Header.getHeaderMenu(type))
         );
     }
 
-    protected Go(String type) {
+    protected WanaGo(String type) {
         this.type = type;
     }
 
-    public static Go banking(String type) {
-        return instrumented(Go.class, type);
+    public static WanaGo banking(String type) {
+        return instrumented(WanaGo.class, type);
     }
 
 

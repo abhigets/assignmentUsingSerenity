@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import test.fire.demo.questions.MainContainerContainsLink;
-import test.fire.demo.tasks.Go;
+import test.fire.demo.tasks.WanaGo;
 import test.fire.demo.tasks.OpenTheApplication;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
@@ -39,7 +39,7 @@ public class VariousBankingServicesVerificationStory {
 
         givenThat(anna).wasAbleTo(openTheApplication);
 
-        when(anna).attemptsTo(Go.banking("Personal"));
+        when(anna).attemptsTo(WanaGo.banking("Personal"));
 
         then(anna).should(eventually(seeThat(new MainContainerContainsLink("Deposit Products"), is(true))));
         then(anna).should(eventually(seeThat(new MainContainerContainsLink("Checking"), is(true))));
@@ -54,7 +54,7 @@ public class VariousBankingServicesVerificationStory {
 
         givenThat(anna).wasAbleTo(openTheApplication);
 
-        when(anna).attemptsTo(Go.banking("Small Business"));
+        when(anna).attemptsTo(WanaGo.banking("Small Business"));
 
         then(anna).should(eventually(seeThat(new MainContainerContainsLink("Deposit Products"), is(true))));
         then(anna).should(eventually(seeThat(new MainContainerContainsLink("Lending"), is(true))));
