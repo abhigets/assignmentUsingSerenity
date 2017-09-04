@@ -23,4 +23,6 @@ $ mvn clean -Dwebdriver.driver=phantomjs verify
 
 ### Reports
 After running the test serenity reports will be generated at following location
+```sh
 <ProjectDir>/target/site/serenity/index.html
+```
