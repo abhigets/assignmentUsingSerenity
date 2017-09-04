@@ -6,6 +6,6 @@
                 "I want to be able to look up the meaning of unusual and impressive words"},
         cardNumber = "#123"
 )
-package test.fire.demo.features.search;
+package test.fire.demo.features.banking.services;
 
 import net.thucydides.core.annotations.Narrative;
