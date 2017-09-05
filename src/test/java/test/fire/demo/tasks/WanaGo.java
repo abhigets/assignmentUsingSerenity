@@ -13,15 +13,15 @@ public class WanaGo implements Task {
 
     private final String type;
 
+    protected WanaGo(String type) {
+        this.type = type;
+    }
+
     @Step("WanaGo to #type Banking")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(Header.getHeaderMenu(type))
         );
-    }
-
-    protected WanaGo(String type) {
-        this.type = type;
     }
 
     public static WanaGo banking(String type) {

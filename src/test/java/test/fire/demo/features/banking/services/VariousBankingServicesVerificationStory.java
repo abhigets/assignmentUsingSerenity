@@ -12,10 +12,8 @@ import org.openqa.selenium.WebDriver;
 import test.fire.demo.questions.MainContainerContainsLink;
 import test.fire.demo.tasks.WanaGo;
 import test.fire.demo.tasks.OpenTheApplication;
-
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.EventualConsequence.eventually;
-import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.is;
 
 @RunWith(SerenityRunner.class)
