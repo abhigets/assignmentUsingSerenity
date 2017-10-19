@@ -1,7 +1,7 @@
 # testFireDemoSerenity
 
 ### Framework used
-This project is test automation of http://demo.testfire.net that uses serenity automation framework using Screen Play Design Pattern
+This project is test automation of 'http://thawing-shelf-73260.herokuapp.com/' that uses serenity automation framework using Screen Play Design Pattern
 
 ### Running test
 ```sh
