@@ -1,4 +1,4 @@
-package test.fire.demo.features.administrator;
+package test.expense.traker.features.administrator;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
@@ -10,16 +10,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import test.fire.demo.tasks.Login;
-import test.fire.demo.tasks.OpenTheApplication;
-import test.fire.demo.tasks.AddUser;
-import test.fire.demo.tasks.WanaGo;
+import test.expense.traker.tasks.*;
+
 import static net.serenitybdd.screenplay.EventualConsequence.eventually;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static org.hamcrest.Matchers.containsString;
 
 @RunWith(SerenityRunner.class)
-public class AdministratorAccessibleStory {
+public class BootStrapExpenseTrackerAppStory {
 
     Actor anna = Actor.named("Anna");
 
@@ -35,14 +33,12 @@ public class AdministratorAccessibleStory {
     }
 
     @Test
-    public void administrator_banking_tab_should_show_all_the_links() {
+    public void end_to_end_journey_of_user_registration_and_add_categories() {
 
         givenThat(anna).wasAbleTo(openTheApplication);
 
-        when(anna).attemptsTo(WanaGo.banking("Online Banking Login"));
-        when(anna).attemptsTo(Login.withUserNameAndPassword("Admin", "admin"));
-        when(anna).attemptsTo(AddUser.with("Anna", "Doe", "Anna", "anna"));
-
-        then(anna).should(eventually(seeThat(TheWebPage.title(), containsString("Altoro Mutual: Administration"))));
+        when(anna).attemptsTo(RegisterNewUser.with("John", "doe1"));
+        and(anna).attemptsTo(CreateACategory.withName("Trekking"));
+        and(anna).attemptsTo(CreateACategory.withName("Travelling"));
     }
 }

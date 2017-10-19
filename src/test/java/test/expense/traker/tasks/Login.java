@@ -1,13 +1,11 @@
-package test.fire.demo.tasks;
+package test.expense.traker.tasks;
 
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.Keys;
-import test.fire.demo.ui.LoginBox;
+import test.expense.traker.ui.UserPane;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static org.openqa.selenium.Keys.ENTER;
@@ -24,15 +22,15 @@ public class Login implements Task {
     @Step("Login with user name: #userName and password #password")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Enter.theValue(userName)
-                .into(LoginBox.USER_NAME)
+                .into(UserPane.USER_NAME)
         );
-        actor.attemptsTo(Enter.theValue(userName)
-                .into(LoginBox.PASSWORD)
+        actor.attemptsTo(Enter.theValue(password)
+                .into(UserPane.PASSWORD)
                 .thenHit(ENTER)
         );
     }
 
-    public static Login withUserNameAndPassword(String userName, String password) {
+    public static Login with(String userName, String password) {
         return instrumented(Login.class, userName, password);
     }
 }
